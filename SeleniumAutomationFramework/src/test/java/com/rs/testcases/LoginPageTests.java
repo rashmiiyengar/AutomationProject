@@ -22,7 +22,8 @@ public final class LoginPageTests extends BaseTest {
 		
 		Assertions.assertThat(lpt)
 		.isEqualTo("Let's Shop");
-	
+		System.out.println("test1");
+		
 	}
 	
 

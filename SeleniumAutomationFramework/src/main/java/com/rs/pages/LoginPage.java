@@ -10,6 +10,8 @@ public final class LoginPage {
 	//id ,name,classname,linktext,partiallinktext,css or xpath
 	//Assertions should not be called in page layers
 	//All your page methods needsto have some return type
+	
+	
 	private final By textboxUsername= By.id("userEmail");
 	private final By textboxPassword = By.xpath("//input[@id='userPassword' and @type='password']");
 	private final By btnLogin = By.id("login");
