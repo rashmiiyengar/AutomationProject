@@ -1,7 +1,7 @@
 package com.rs.testcases;
 
 import org.assertj.core.api.Assertions;
-
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.rs.pages.LoginPage;
 
@@ -12,17 +12,31 @@ public final class LoginPageTests extends BaseTest {
 		
 	}
 	 
-	@Test  
-	public void loginTest() {
+	@Test(dataProvider="LoginTestdataProvider")
+	public void loginTest(String username, String password) {
 		
 		//LoginPage lp= new LoginPage();
-		String lpt= new LoginPage().enterUserName("ananya111@gmail.com")
-				.enterPassword("Ananya@123").clickLogin().logout()
+		//"ananya111@gmail.com" "Ananya@123"
+		String lpt= new LoginPage().enterUserName(username)
+				.enterPassword(password).clickLogin().logout()
 				.getTitle();
 		
 		Assertions.assertThat(lpt)
 		.isEqualTo("Let's Shop");
 		System.out.println("test1");
+		
+	}
+	
+	
+	@DataProvider(name="LoginTestdataProvider",parallel=true)
+	public Object[][] getData(){
+		
+		
+		return new Object[][] {
+			
+			{"ananya111@gmail.com","Ananya@123"},
+			{"trisha@gmail.com","Test@123"}
+		};
 		
 	}
 	

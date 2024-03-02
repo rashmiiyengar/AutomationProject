@@ -8,55 +8,54 @@ import java.util.Objects;
 import java.util.Properties;
 
 import com.rs.constants.FrameworkConstants;
+import com.rs.enums.ConfigProperties;
 
-public final class ReadPropertyFile {
+public final class PropertyUtils {
 
-	private ReadPropertyFile() {
+	private PropertyUtils() {
 
 	}
 
 	private static Properties property = new Properties();
-	
-	private static final Map<String,String> CONFIGMAP = new HashMap<>();
-	
+
+	private static final Map<String, String> CONFIGMAP = new HashMap<>();
+
 	static {
 		try {
 			FileInputStream file = new FileInputStream(FrameworkConstants.getConfigfilepath());
 			property.load(file);
-			
-			//for(Object key: property.keySet()) {
-			//	CONFIGMAP.put(String.valueOf(key),String.valueOf(property.get(key)));
-			//}
-			
-			for(Map.Entry<Object, Object> entry: property.entrySet())
-			{
-				CONFIGMAP.put(String.valueOf(entry.getKey()),String.valueOf(entry.getValue()).trim());
+
+			// for(Object key: property.keySet()) {
+			// CONFIGMAP.put(String.valueOf(key),String.valueOf(property.get(key)));
+			// }
+
+			for (Map.Entry<Object, Object> entry : property.entrySet()) {
+				CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim());
 			}
-			
-			//another way
-			//property.entrySet().forEach(entry -> CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue())));
-			
-			
+
+			// another way
+			// property.entrySet().forEach(entry ->
+			// CONFIGMAP.put(String.valueOf(entry.getKey()),
+			// String.valueOf(entry.getValue())));
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-	
-	//Hash map
-	public static String get(String key) throws Exception {
-		
-		if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key))) {
+
+	// Hash map
+	public static String get(ConfigProperties key) throws Exception {
+
+		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
 			throw new Exception("property name" + key + "is not found pls check properties.config");
 		}
-		return CONFIGMAP.get(key);
+		return CONFIGMAP.get(key.name().toLowerCase());
 	}
-	
-	
-	//Hashtable little slow , but thread safe
+
+	// Hashtable little slow , but thread safe
 	public static String getValue(String key) throws Exception {
-		
 
 		if (Objects.isNull(property.getProperty(key)) || Objects.isNull(key)) {
 			throw new Exception("property name" + key + "is not found pls check properties.config");

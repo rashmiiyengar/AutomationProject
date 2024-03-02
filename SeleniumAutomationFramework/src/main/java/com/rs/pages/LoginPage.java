@@ -3,6 +3,7 @@ package com.rs.pages;
 import org.openqa.selenium.By;
 
 import com.rs.driver.DriverManager;
+import com.rs.enums.WaitStratergy;
 
 public final class LoginPage extends BasePage {
 
@@ -15,18 +16,18 @@ public final class LoginPage extends BasePage {
 	private final By btnLogin = By.id("login");
 
 	public LoginPage enterUserName(String userName) {
-		sendKeys(textboxUsername, userName);
+		sendKeys(textboxUsername, userName,WaitStratergy.PRESENCE);
 		return this;
 	}
 
 	public LoginPage enterPassword(String password) {
 
-		sendKeys(textboxPassword, password);
+		sendKeys(textboxPassword, password,WaitStratergy.PRESENCE);
 		return this;
 	}
 
 	public LandingPage clickLogin() {
-		click(btnLogin);
+		click(btnLogin,WaitStratergy.PRESENCE);
 
 		return new LandingPage();
 	}

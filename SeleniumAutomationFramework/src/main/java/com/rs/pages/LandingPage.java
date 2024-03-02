@@ -2,6 +2,7 @@ package com.rs.pages;
 
 
 import org.openqa.selenium.By;
+import com.rs.enums.WaitStratergy;
 
 
 public final  class LandingPage extends BasePage {
@@ -12,8 +13,8 @@ public final  class LandingPage extends BasePage {
 	
 	public LoginPage logout() {
 		
-		explicitWaitForElementToBeClickable(logout);
-		click(logout,"clickable");
+	
+		click(logout,WaitStratergy.CLICKABLE);
 		return new LoginPage();
 		
 	}

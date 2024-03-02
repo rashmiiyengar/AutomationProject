@@ -2,38 +2,60 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-25T19:10:00 PST" name="Suite" finished-at="2024-02-25T19:10:12 PST" duration-ms="11434">
+  <suite started-at="2024-02-29T15:15:18 PST" name="Default suite" finished-at="2024-02-29T15:15:26 PST" duration-ms="7651">
     <groups>
     </groups>
-    <test started-at="2024-02-25T19:10:00 PST" name="Test" finished-at="2024-02-25T19:10:12 PST" duration-ms="11434">
-      <class name="com.rs.testcases.HomePageTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.HomePageTests@1b1473ab]" started-at="2024-02-25T19:10:00 PST" name="setUp" finished-at="2024-02-25T19:10:07 PST" duration-ms="6405" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testcase1()[pri:0, instance:com.rs.testcases.HomePageTests@1b1473ab]" started-at="2024-02-25T19:10:07 PST" name="testcase1" finished-at="2024-02-25T19:10:07 PST" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.HomePageTests@1b1473ab]" started-at="2024-02-25T19:10:07 PST" name="tearDown" finished-at="2024-02-25T19:10:07 PST" duration-ms="91" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.rs.testcases.HomePageTests -->
+    <test started-at="2024-02-29T15:15:18 PST" name="Default test" finished-at="2024-02-29T15:15:26 PST" duration-ms="7651">
       <class name="com.rs.testcases.LoginPageTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@1677d1]" started-at="2024-02-25T19:10:00 PST" name="setUp" finished-at="2024-02-25T19:10:11 PST" duration-ms="10468" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:18 PST" name="setUp" finished-at="2024-02-29T15:15:21 PST" duration-ms="3029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTest()[pri:0, instance:com.rs.testcases.LoginPageTests@1677d1]" started-at="2024-02-25T19:10:11 PST" name="loginTest" finished-at="2024-02-25T19:10:12 PST" duration-ms="861" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:18 PST" name="setUp" finished-at="2024-02-29T15:15:25 PST" duration-ms="6786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:21 PST" name="loginTest" data-provider="LoginTestdataProvider" finished-at="2024-02-29T15:15:25 PST" duration-ms="3902" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[trisha@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@1677d1]" started-at="2024-02-25T19:10:12 PST" name="tearDown" finished-at="2024-02-25T19:10:12 PST" duration-ms="87" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:25 PST" name="loginTest" data-provider="LoginTestdataProvider" finished-at="2024-02-29T15:15:26 PST" duration-ms="760" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ananya111@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ananya@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:25 PST" name="tearDown" finished-at="2024-02-29T15:15:25 PST" duration-ms="92" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@78b66d36]" started-at="2024-02-29T15:15:26 PST" name="tearDown" finished-at="2024-02-29T15:15:26 PST" duration-ms="84" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.rs.testcases.LoginPageTests -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

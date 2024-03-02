@@ -3,6 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
+      <class name="com.rs.testcases.HomePageTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- com.rs.testcases.HomePageTests -->
       <class name="com.rs.testcases.LoginPageTests">
         <methods>
           <include name="loginTest"/>
