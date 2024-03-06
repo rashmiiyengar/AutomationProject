@@ -31,6 +31,7 @@ public final class ExtentReport {
 		spark.config().setDocumentTitle("RS Report");
 		spark.config().setReportName("Automation project");
 		}
+		
 	}
 
 	public static void flushReports() throws IOException {
