@@ -1,10 +1,12 @@
 package com.rs.testcases;
 
+import java.util.Map;
+
 import org.assertj.core.api.Assertions;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.rs.pages.LoginPage;
+import com.rs.utils.DataProviderUtils;
 
 public final class LoginPageTests extends BaseTest {
 	
@@ -12,14 +14,14 @@ public final class LoginPageTests extends BaseTest {
 		
 	}
 	
-	@Test(dataProvider = "LoginTestdataProvider")
-	public void loginlogouttest(String username, String password) throws Exception {
+	@Test(dataProvider = "LoginTestdataProvider",dataProviderClass = DataProviderUtils.class)
+	public void loginlogouttest(Map<String,String> data) throws Exception {
 		//LoginPage lp= new LoginPage();
 		//"ananya111@gmail.com" "Ananya@123"
 		
 		
-		String lpt= new LoginPage().enterUserName(username)
-				.enterPassword(password).clickLogin().logout()
+		String lpt= new LoginPage().enterUserName(data.get("username"))
+				.enterPassword(data.get("password")).clickLogin().logout()
 				.getTitle();
 		
 		Assertions.assertThat(lpt)
@@ -27,14 +29,14 @@ public final class LoginPageTests extends BaseTest {
 		System.out.println("test1");	
 	}
 	
-	@Test(dataProvider = "LoginTestdataProvider")
-	public void newtest(String username, String password) throws Exception {
+	@Test(dataProvider = "LoginTestdataProvider",dataProviderClass = DataProviderUtils.class)
+	public void newtest(Map<String,String> data) throws Exception {
 		//LoginPage lp= new LoginPage();
 		//"ananya111@gmail.com" "Ananya@123"
 		
 		
-		String lpt= new LoginPage().enterUserName(username)
-				.enterPassword(password).clickLogin().logout()
+		String lpt= new LoginPage().enterUserName(data.get("username"))
+				.enterPassword(data.get("password")).clickLogin().logout()
 				.getTitle();
 		
 		Assertions.assertThat(lpt)
@@ -43,13 +45,13 @@ public final class LoginPageTests extends BaseTest {
 	}
 	
 	
-	@DataProvider(name="LoginTestdataProvider",parallel=true)
-	public Object[][] getData(){
+	//@DataProvider(name="LoginTestdataProvider",parallel=true)
+	//public Object[][] getData(){
 		
-		return new Object[][] {
+		//return new Object[][] {
 			
-			{"ananya111@gmail.com","Ananya@123"},
-			//{"trisha@gmail.com","Test@1234"}
-		};
-	}
+		//	{"ananya111@gmail.com","Ananya@123"},
+			//{"trisha@gmail.com","Test@123"}
+		//};
+	//}
 }

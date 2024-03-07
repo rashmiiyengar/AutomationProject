@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-07T14:40:13 PST" name="Suite" finished-at="2024-03-07T14:40:38 PST" duration-ms="24827">
+  <suite started-at="2024-03-07T15:39:43 PST" name="Suite" finished-at="2024-03-07T15:40:06 PST" duration-ms="22577">
     <groups>
     </groups>
-    <test started-at="2024-03-07T14:40:13 PST" name="Test" finished-at="2024-03-07T14:40:38 PST" duration-ms="24827">
+    <test started-at="2024-03-07T15:39:43 PST" name="Test" finished-at="2024-03-07T15:40:06 PST" duration-ms="22577">
       <class name="com.rs.testcases.LoginPageTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:14 PST" name="setUp" finished-at="2024-03-07T14:40:21 PST" duration-ms="7811" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:43 PST" name="setUp" finished-at="2024-03-07T15:39:50 PST" duration-ms="6653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginlogouttest(java.lang.String,java.lang.String)[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:21 PST" name="loginlogouttest" description="To check whether the user can successfully login and logout" data-provider="LoginTestdataProvider" finished-at="2024-03-07T14:40:25 PST" duration-ms="3646" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:43 PST" name="setUp" finished-at="2024-03-07T15:39:50 PST" duration-ms="6838" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginlogouttest(java.util.Map)[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:50 PST" name="loginlogouttest" description="To check whether the user can successfully login and logout" data-provider="LoginTestdataProvider" finished-at="2024-03-07T15:39:54 PST" duration-ms="3921" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ananya111@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ananya@123]]>
+                <![CDATA[{fname=Ananya, password=Ananya@123, testname=loginlogouttest, execute=yes, username=ananya111@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginlogouttest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:25 PST" name="tearDown" finished-at="2024-03-07T14:40:25 PST" duration-ms="100" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:25 PST" name="setUp" finished-at="2024-03-07T14:40:34 PST" duration-ms="9382" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="newtest(java.lang.String,java.lang.String)[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:34 PST" name="newtest" description="To check wheather test is executed" data-provider="LoginTestdataProvider" finished-at="2024-03-07T14:40:38 PST" duration-ms="3514" status="PASS">
+        <test-method signature="loginlogouttest(java.util.Map)[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:50 PST" name="loginlogouttest" description="To check whether the user can successfully login and logout" data-provider="LoginTestdataProvider" finished-at="2024-03-07T15:39:54 PST" duration-ms="3738" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ananya111@gmail.com]]>
+                <![CDATA[{fname=Ananya, password=Ananya@123, testname=loginlogouttest, execute=yes, username=ananya111@gmail.com}]]>
               </value>
             </param>
-            <param index="1">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginlogouttest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:54 PST" name="tearDown" finished-at="2024-03-07T15:39:54 PST" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:54 PST" name="tearDown" finished-at="2024-03-07T15:39:54 PST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:54 PST" name="setUp" finished-at="2024-03-07T15:40:02 PST" duration-ms="7855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:54 PST" name="setUp" finished-at="2024-03-07T15:39:59 PST" duration-ms="5166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="newtest(java.util.Map)[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:39:59 PST" name="newtest" description="To check wheather test is executed" data-provider="LoginTestdataProvider" finished-at="2024-03-07T15:40:03 PST" duration-ms="4060" status="PASS">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[Ananya@123]]>
+                <![CDATA[{fname=Ananya, password=Ananya@123, testname=newtest, execute=yes, username=ananya111@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- newtest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@70e8f8e]" started-at="2024-03-07T14:40:38 PST" name="tearDown" finished-at="2024-03-07T14:40:38 PST" duration-ms="99" status="PASS">
+        <test-method signature="newtest(java.util.Map)[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:40:02 PST" name="newtest" description="To check wheather test is executed" data-provider="LoginTestdataProvider" finished-at="2024-03-07T15:40:06 PST" duration-ms="3534" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fname=trisha, password=Test@123, testname=newtest, execute=yes, username=trisha@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newtest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:40:03 PST" name="tearDown" finished-at="2024-03-07T15:40:04 PST" duration-ms="87" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.rs.testcases.LoginPageTests@3c419631]" started-at="2024-03-07T15:40:06 PST" name="tearDown" finished-at="2024-03-07T15:40:06 PST" duration-ms="95" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

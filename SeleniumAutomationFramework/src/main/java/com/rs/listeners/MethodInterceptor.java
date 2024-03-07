@@ -20,7 +20,7 @@ public class MethodInterceptor implements IMethodInterceptor {
         List<Map<String, String>> list = null;
 
         try {
-            list = ExcelUtils.getTestDetails();
+            list = ExcelUtils.getTestDetails("RUNMANAGER");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

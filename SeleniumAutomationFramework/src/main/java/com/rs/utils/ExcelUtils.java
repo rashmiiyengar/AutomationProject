@@ -22,13 +22,13 @@ public class ExcelUtils {
 
 	static List<Map<String, String>> list;
 
-	public static List<Map<String, String>> getTestDetails() throws IOException, FileNotFoundException {
+	public static List<Map<String, String>> getTestDetails(String sheetname) throws IOException, FileNotFoundException {
 
 		FileInputStream fs = null;
 		try {
 			fs = new FileInputStream(FrameworkConstants.getExcelPath());
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
-			String sheetname = "RUNMANAGER";
+			//String sheetname = "RUNMANAGER";
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 
 			int lastrownum = sheet.getLastRowNum();
