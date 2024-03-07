@@ -12,16 +12,21 @@ public class BasePage {
 
 	
 	//we want to make sure user can only choose from list of predefined options
-	protected void click(By by, WaitStratergy waitstratergy,String elementName) {
+	protected void click(By by, WaitStratergy waitstratergy,String elementName) throws Exception {
 		WebElement element= ExplicitWaitFactory.performExplicitWait(waitstratergy, by);
 		element.click();
-		ExtentLogger.pass(elementName+ " is clicked");
+		ExtentLogger.pass(elementName+ " is clicked",true);
 	}
 
 	protected void sendKeys(By by, String value, WaitStratergy waitstratergy,String elementName) {
 		WebElement element=ExplicitWaitFactory.performExplicitWait(waitstratergy, by);
 		element.sendKeys(value);
-		ExtentLogger.pass(value+ " is entered successfully in " +elementName);
+		try {
+			ExtentLogger.pass(value+ " is entered successfully in " +elementName,true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//DriverManager.getDriver().findElement(by).sendKeys(value);
 	}
  

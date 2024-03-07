@@ -1,6 +1,7 @@
 package com.rs.listeners;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
@@ -15,7 +16,12 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
-		ExtentReport.initReports();
+		try {
+			ExtentReport.initReports();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -24,6 +30,9 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 		try {
 			ExtentReport.flushReports();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -43,8 +52,16 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		ExtentLogger.fail(result.getMethod().getMethodName() + "is failed ");
+		//ExtentLogger.fail(result.getMethod().getMethodName() + "is failed ");
 		// attach screenshot
+		try {
+			ExtentLogger.fail(result.getMethod().getMethodName()+"is failed" , true);
+			ExtentLogger.fail(result.getThrowable().toString());
+			ExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

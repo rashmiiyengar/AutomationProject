@@ -8,7 +8,7 @@ public final class LandingPage extends BasePage {
 
 	private final By logout = By.xpath("//button[contains(text(), 'Sign Out')]");
 
-	public LoginPage logout() {
+	public LoginPage logout() throws Exception {
 
 		click(logout, WaitStratergy.CLICKABLE,"Login Button");
 //		/ExtentManager.getExtentTest().pass("logout clicked successfully");

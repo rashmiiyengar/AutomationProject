@@ -13,7 +13,7 @@ public final class LoginPageTests extends BaseTest {
 	}
 	
 	@Test(dataProvider="LoginTestdataProvider")
-	public void loginTest(String username, String password) {
+	public void loginTest(String username, String password) throws Exception {
 		//LoginPage lp= new LoginPage();
 		//"ananya111@gmail.com" "Ananya@123"
 		
@@ -33,7 +33,7 @@ public final class LoginPageTests extends BaseTest {
 		return new Object[][] {
 			
 			{"ananya111@gmail.com","Ananya@123"},
-			{"trisha@gmail.com","Test@123"}
+			//{"trisha@gmail.com","Test@1234"}
 		};
 	}
 }

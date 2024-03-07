@@ -1,5 +1,8 @@
 package com.rs.constants;
 
+import com.rs.enums.ConfigProperties;
+import com.rs.utils.PropertyUtils;
+
 public class FrameworkConstants {
 
 	private FrameworkConstants() {
@@ -15,12 +18,31 @@ public class FrameworkConstants {
 
 	private static final String CONFIGFILEPATH = System.getProperty("user.dir")
 			+ "/src/test/resources/config/config.properties";
-	private static final String EXTENTREPORTPATH = System.getProperty("user.dir") + "/extent-test-output/index.html";
+	
+	private static final String EXTENTREPORTFOLDERPATH = System.getProperty("user.dir") + "/extent-test-output";
 
-	protected static String getExtentreportpath() {
-		return EXTENTREPORTPATH;
+	private static String extentReportFilePath="";
+	
+	
+	
+	public static String getExtentReportFilePath() throws Exception {
+		if(extentReportFilePath.isEmpty()) {
+			extentReportFilePath=createReportPath();
+		}
+		return extentReportFilePath;
 	}
 
+	private static String createReportPath() throws Exception {
+		if(PropertyUtils.get(ConfigProperties.OVERRIDERREPORTS).equalsIgnoreCase("no")) {
+			return EXTENTREPORTFOLDERPATH+"/"+System.currentTimeMillis()+"index.html";
+		}
+		
+		else {
+			return EXTENTREPORTFOLDERPATH+"index.html";
+		}
+	}
+	
+	
 	public static String getConfigfilepath() {
 		return CONFIGFILEPATH;
 	}

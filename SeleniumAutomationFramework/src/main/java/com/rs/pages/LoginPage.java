@@ -25,7 +25,7 @@ public final class LoginPage extends BasePage {
 		return this;
 	}
 
-	public LandingPage clickLogin() {
+	public LandingPage clickLogin() throws Exception {
 		click(btnLogin,WaitStratergy.PRESENCE,"Login Button");
 
 		return new LandingPage();
