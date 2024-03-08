@@ -45,12 +45,15 @@ public final class PropertyUtils {
 
 	}
 
+
 	// Hash map
 	public static String get(ConfigProperties key) throws Exception {
 
 		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
 			throw new Exception("property name" + key + "is not found pls check properties.config");
 		}
+		//System.out.println("config properties value"+CONFIGMAP.get(key.name().toLowerCase()));	
+		//System.out.println(CONFIGMAP+"" );
 		return CONFIGMAP.get(key.name().toLowerCase());
 	}
 

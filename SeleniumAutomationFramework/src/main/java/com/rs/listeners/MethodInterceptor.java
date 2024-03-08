@@ -10,6 +10,7 @@ import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
 
+import com.rs.constants.FrameworkConstants;
 import com.rs.utils.ExcelUtils;
 
 public class MethodInterceptor implements IMethodInterceptor {
@@ -20,7 +21,7 @@ public class MethodInterceptor implements IMethodInterceptor {
         List<Map<String, String>> list = null;
 
         try {
-            list = ExcelUtils.getTestDetails("RUNMANAGER");
+            list = ExcelUtils.getTestDetails(FrameworkConstants.getRunmanagersheet());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

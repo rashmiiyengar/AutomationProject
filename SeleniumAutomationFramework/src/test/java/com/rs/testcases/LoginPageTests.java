@@ -5,6 +5,7 @@ import java.util.Map;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
+import com.rs.listeners.RetryFailedTests;
 import com.rs.pages.LoginPage;
 import com.rs.utils.DataProviderUtils;
 
@@ -14,7 +15,7 @@ public final class LoginPageTests extends BaseTest {
 		
 	}
 	
-	@Test(dataProvider = "LoginTestdataProvider",dataProviderClass = DataProviderUtils.class)
+	@Test
 	public void loginlogouttest(Map<String,String> data) throws Exception {
 		//LoginPage lp= new LoginPage();
 		//"ananya111@gmail.com" "Ananya@123"
@@ -29,7 +30,7 @@ public final class LoginPageTests extends BaseTest {
 		System.out.println("test1");	
 	}
 	
-	@Test(dataProvider = "LoginTestdataProvider",dataProviderClass = DataProviderUtils.class)
+	@Test
 	public void newtest(Map<String,String> data) throws Exception {
 		//LoginPage lp= new LoginPage();
 		//"ananya111@gmail.com" "Ananya@123"

@@ -9,6 +9,8 @@ import java.util.Map;
 
 import org.testng.annotations.DataProvider;
 
+import com.rs.constants.FrameworkConstants;
+
 public final class DataProviderUtils {
 
 	private static List<Map<String, String>> list = new ArrayList<>();
@@ -19,22 +21,22 @@ public final class DataProviderUtils {
 		String testcasename = m.getName();
 
 		if (list.isEmpty()) {
-			list=ExcelUtils.getTestDetails("DATA");
+			list=ExcelUtils.getTestDetails(FrameworkConstants.getIterationdatasheet());
 		}
 
 		List<Map<String, String>> smallList = new ArrayList<>();
 
 		for (int i = 0; i < list.size(); i++) {
 
-			if (list.get(i).get("testname").equalsIgnoreCase(testcasename)) {
-				if (list.get(i).get("execute").equalsIgnoreCase("yes")) {
-					smallList.add(list.get(i));
-				}
+			if (list.get(i).get("testname").equalsIgnoreCase(testcasename)
+				&& (list.get(i).get("execute").equalsIgnoreCase("yes"))) {
+					smallList.add(list.get(i)); 
+				
 			}
 
 		}
 
-		list.removeAll(smallList);
+		
 		return smallList.toArray();
 
 	}
