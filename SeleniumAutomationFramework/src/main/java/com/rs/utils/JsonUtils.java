@@ -1,16 +1,5 @@
 package com.rs.utils;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rs.constants.FrameworkConstants;
-import com.rs.enums.ConfigProperties;
-
 //public class JsonUtils {
 
 	//private static Map<String, String> CONFIGMAP;

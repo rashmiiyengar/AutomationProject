@@ -1,13 +1,6 @@
 package com.rs.testcases;
 
-import java.util.Objects;
-
-import org.assertj.core.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.rs.driver.DriverManager;
 
 public final class HomePageTests extends BaseTest {
 	

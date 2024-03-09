@@ -1,5 +1,7 @@
 package com.rs.testcases;
 
+import java.util.Map;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -11,14 +13,20 @@ public class BaseTest {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@BeforeMethod
-	protected void setUp() throws Exception {
+	protected void setUp(Object[] data) throws Exception {
 		
-		Driver.initDriver();
+		Map<String,String> map=(Map<String,String>)data[0];
+		Driver.initDriver(map.get("browser"));
+	
 	}
 
 	@AfterMethod
 	protected void tearDown() {
+		
 		Driver.quitDriver();
+	
 	}
+	
 }

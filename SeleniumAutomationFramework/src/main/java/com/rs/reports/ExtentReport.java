@@ -37,6 +37,7 @@ public final class ExtentReport {
 	public static void flushReports() throws Exception {
 		if(Objects.nonNull(extent)) {
 		extent.flush();}
+		ExtentManager.unload();
 		Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
 	}
 
