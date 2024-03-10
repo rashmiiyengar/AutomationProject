@@ -4,11 +4,12 @@
 	<listeners>
 		<listener class-name="com.rs.listeners.ListenerClass"></listener>
 		<listener class-name="com.rs.listeners.MethodInterceptor"></listener>
+		<listener class-name="com.rs.listeners.AnnotationTransforner"></listener>
 	</listeners>
-  <test thread-count="1" name="Test" parallel="methods">
+  <test thread-count="1" name="Test">
     <classes>
       <class name="com.rs.testcases.LoginPageTests"/>
-         
+         <class name="com.rs.testcases.AmazonDemoTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

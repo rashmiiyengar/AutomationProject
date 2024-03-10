@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -24,11 +23,12 @@ public class ExcelUtils {
 
 	public static List<Map<String, String>> getTestDetails(String sheetname) throws IOException, FileNotFoundException {
 
-		FileInputStream fs = null;
-		try {
-			fs = new FileInputStream(FrameworkConstants.getExcelPath());
+		FileInputStream fs = new FileInputStream(FrameworkConstants.getExcelPath());
+		
+		try (fs) {
+
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
-			//String sheetname = "RUNMANAGER";
+			// String sheetname = "RUNMANAGER";
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 
 			int lastrownum = sheet.getLastRowNum();
@@ -37,7 +37,7 @@ public class ExcelUtils {
 			Map<String, String> map = null;
 			list = new ArrayList<>();
 
-			for (int i = 1; i <=lastrownum; i++) {
+			for (int i = 1; i <= lastrownum; i++) {
 				map = new HashMap<>(); //
 
 				for (int j = 0; j < lastcolnum; j++) {
@@ -49,20 +49,13 @@ public class ExcelUtils {
 				list.add(map);
 			}
 
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e) {
+		}  catch(FileNotFoundException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				if (Objects.nonNull(fs)) {
-					fs.close();
-				}
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		
 
 		return list;
 

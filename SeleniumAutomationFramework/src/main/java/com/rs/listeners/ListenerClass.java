@@ -8,6 +8,7 @@ import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.rs.annotations.FrameworkAnnotation;
 import com.rs.reports.ExtentLogger;
 import com.rs.reports.ExtentReport;
 
@@ -42,6 +43,11 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 	public void onTestStart(ITestResult result) {
 
 		ExtentReport.createTest(result.getMethod().getDescription());
+		ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod()
+				.getAnnotation(FrameworkAnnotation.class).author());
+		ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod()
+				.getAnnotation(FrameworkAnnotation.class).category());
+
 	}
 
 	@Override
@@ -52,10 +58,10 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		//ExtentLogger.fail(result.getMethod().getMethodName() + "is failed ");
+		// ExtentLogger.fail(result.getMethod().getMethodName() + "is failed ");
 		// attach screenshot
 		try {
-			ExtentLogger.fail(result.getMethod().getMethodName()+"is failed" , true);
+			ExtentLogger.fail(result.getMethod().getMethodName() + "is failed", true);
 			ExtentLogger.fail(result.getThrowable().toString());
 			ExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()));
 		} catch (Exception e) {

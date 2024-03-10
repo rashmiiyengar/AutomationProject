@@ -7,7 +7,7 @@ import com.rs.utils.DynamicXpathUtils;
 
 public class AmazonHamburgerMenuPage extends BasePage {
 
-	private String linkSubMenu = "//a[text()='%replaceable%']";
+	private String linkSubMenu = "//a[text()='%s']";
 	private String linkComputers= "//div[text()='Mobiles, Computers']/parent::a";
 	
 	public AmazonHamburgerMenuPage clickComputer() throws Exception {
