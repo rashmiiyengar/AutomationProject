@@ -22,7 +22,7 @@ public final class Driver {
 		if (Objects.isNull(DriverManager.getDriver())) {
 
 			if (browser.equalsIgnoreCase("chrome")) {
-				WebDriverManager.chromedriver().setup();
+				WebDriverManager.chromedriver().setup(); 
 				DriverManager.setDriver(new ChromeDriver());
 
 			} else if (browser.equalsIgnoreCase("firefox")) {
@@ -39,6 +39,5 @@ public final class Driver {
 			DriverManager.getDriver().quit();
 			DriverManager.unload();
 		}
-
 	}
 }

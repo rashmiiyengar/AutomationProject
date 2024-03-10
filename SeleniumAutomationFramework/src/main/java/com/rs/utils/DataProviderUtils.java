@@ -15,13 +15,13 @@ public final class DataProviderUtils {
 
 	private static List<Map<String, String>> list = new ArrayList<>();
 
-	@DataProvider(name = "LoginTestdataProvider", parallel = true)
+	@DataProvider(name = "LoginTestdataProvider")
 	public static Object[] getData(Method m) throws FileNotFoundException, IOException {
 
 		String testcasename = m.getName();
 
 		if (list.isEmpty()) {
-			list=ExcelUtils.getTestDetails(FrameworkConstants.getIterationdatasheet());
+			list = ExcelUtils.getTestDetails(FrameworkConstants.getIterationdatasheet());
 		}
 
 		List<Map<String, String>> smallList = new ArrayList<>();
@@ -29,14 +29,12 @@ public final class DataProviderUtils {
 		for (int i = 0; i < list.size(); i++) {
 
 			if (list.get(i).get("testname").equalsIgnoreCase(testcasename)
-				&& (list.get(i).get("execute").equalsIgnoreCase("yes"))) {
-					smallList.add(list.get(i)); 
-				
+					&& (list.get(i).get("execute").equalsIgnoreCase("yes"))) {
+				smallList.add(list.get(i));
 			}
 
 		}
 
-		
 		return smallList.toArray();
 
 	}
