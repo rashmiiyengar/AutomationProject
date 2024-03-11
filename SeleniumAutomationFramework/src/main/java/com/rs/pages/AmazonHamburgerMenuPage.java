@@ -1,7 +1,6 @@
 package com.rs.pages;
 
 import org.openqa.selenium.By;
-
 import com.rs.enums.WaitStratergy;
 import com.rs.utils.DynamicXpathUtils;
 
@@ -24,5 +23,4 @@ public class AmazonHamburgerMenuPage extends BasePage {
 		}
 		return null;
 	}
-	
 }

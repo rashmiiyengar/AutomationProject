@@ -43,7 +43,6 @@ public class ExcelUtils {
 				for (int j = 0; j < lastcolnum; j++) {
 					String key = sheet.getRow(0).getCell(j).getStringCellValue();
 					String value = sheet.getRow(i).getCell(j).getStringCellValue();
-
 					map.put(key, value);
 				}
 				list.add(map);
