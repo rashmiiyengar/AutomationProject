@@ -3,8 +3,25 @@ package com.rs.constants;
 import com.rs.enums.ConfigProperties;
 import com.rs.utils.PropertyUtils;
 
+
+/**
+ * Framework Constants holds all the constant values used within the framework.
+ * If some value needs to be changed or modified often, then it should be stored in property files
+ * 
+ * 
+ *
+	Apr 15, 2024
+	@author rashmisoundar
+	{@summary}Framework Constants holds all the constant values used within the framework. 
+	If some value needs to be changed or modified often, then it should be stored in property files.
+	@see com.rs.utils.PropertyUtils
+ */
 public class FrameworkConstants {
 
+	
+	/**
+	 * Private constructor to avoid external instantiation
+	 */
 	private FrameworkConstants() {
 
 	}
@@ -27,7 +44,7 @@ public class FrameworkConstants {
 	private static String extentReportFilePath = "";
 	
 
-	private static String createReportPath() throws Exception {
+	private static String createReportPath()  {
 		if (PropertyUtils.get(ConfigProperties.OVERRIDERREPORTS).equalsIgnoreCase("no")) {
 			return EXTENTREPORTFOLDERPATH + "/" + System.currentTimeMillis() + "index.html";
 		}
@@ -37,7 +54,7 @@ public class FrameworkConstants {
 		}
 	}
 	
-	public static String getExtentReportFilePath() throws Exception {
+	public static String getExtentReportFilePath()  {
 		if (extentReportFilePath.isEmpty()) {
 			extentReportFilePath = createReportPath();
 		}

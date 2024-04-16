@@ -11,10 +11,32 @@ import org.testng.annotations.DataProvider;
 
 import com.rs.constants.FrameworkConstants;
 
+
+/**
+ * Holds the data provider for all the testcases in the framework.
+ * @author rashmisoundar
+	Apr 15, 2024
+ */
 public final class DataProviderUtils {
+	/**
+	 * Private constructor to avoid external instantiation
+	 */
+	private DataProviderUtils() {}
 
 	private static List<Map<String, String>> list = new ArrayList<>();
 
+	
+	/**
+	 * Acts as a dataprovider for all testcases
+	 * 
+	 * @param m {@link java.lang.reflect.Method} holds the information about the testcases at runtime
+	 * @returnObject[] containing the List. Each index of the list contains HashMap and each of them 
+	 * contains the test data needed to run the iterations.
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @see com.rs.testcases
+	 * @see com.rs.listener.AnnotationTransformer
+	 */
 	@DataProvider(name = "LoginTestdataProvider")
 	public static Object[] getData(Method m) throws FileNotFoundException, IOException {
 

@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import com.rs.constants.FrameworkConstants;
 import com.rs.enums.ConfigProperties;
+import com.rs.exceptions.PropertyFileUsageExceptions;
 
 public final class PropertyUtils {
 
@@ -41,27 +42,28 @@ public final class PropertyUtils {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.exit(0);
 		}
 
 	}
 
-
 	// Hash map
-	public static String get(ConfigProperties key) throws Exception {
+	public static String get(ConfigProperties key) {
 
 		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
-			throw new Exception("property name" + key + "is not found pls check properties.config");
+			throw new PropertyFileUsageExceptions("property name" + key + "is not found pls check properties.config");
 		}
-		//System.out.println("config properties value"+CONFIGMAP.get(key.name().toLowerCase()));	
-		//System.out.println(CONFIGMAP+"" );
+		// System.out.println("config properties
+		// value"+CONFIGMAP.get(key.name().toLowerCase()));
+		// System.out.println(CONFIGMAP+"" );
 		return CONFIGMAP.get(key.name().toLowerCase());
 	}
 
 	// Hashtable little slow , but thread safe
-	public static String getValue(String key) throws Exception {
+	public static String getValue(String key) {
 
 		if (Objects.isNull(property.getProperty(key)) || Objects.isNull(key)) {
-			throw new Exception("property name" + key + "is not found pls check properties.config");
+			throw new PropertyFileUsageExceptions("property name" + key + "is not found pls check properties.config");
 		}
 		return property.getProperty(key);
 	}

@@ -11,8 +11,25 @@ import com.rs.constants.FrameworkConstants;
 import com.rs.driver.DriverManager;
 import com.rs.enums.WaitStratergy;
 
-public class ExplicitWaitFactory {
 
+/**
+ * Explicit wait factory produces different waits before operating on webelement
+	Apr 15, 2024
+ */
+public final class ExplicitWaitFactory {
+	/**
+	 * Private constructor to avoid external isntantiation
+	 */
+	private ExplicitWaitFactory() {
+		
+	}
+	
+	/**
+	 * @author rashmisoundar
+	 * @param waitstratergy Stratergy to be applied to fild a webelement {@link com.rs.enums.WaitStratergy}
+	 * @param by By locator of the webelement
+	 * @return webelement Located and return the webelement
+	 */
 	public static WebElement performExplicitWait(WaitStratergy waitstratergy, By by) {
 		WebElement element = null;
 

@@ -10,13 +10,34 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public final class Driver {
 
+	
+	/**
+	 * Private constructor to avoid external instantiation
+	 * 
+	 */
 	private Driver() {
 
 	}
+	/**
+	 * Driver Class is responsible for invoking and closing the browsers also 
+	 * 
+	 * 
+	 * responsible for setting the driver variable to driverManager which handles
+	 * the thread safety for the webdriver instance
+	 * 
+	 * <pre> DriverManager has all the getter and setter mehods</pre>
+	 * 
+	 * March 19, 2024
+	 * @author rashmisoundar
+	 * @param browser value will be passed from base test value can be chrome or firefox
+	 * @see DriverManager 
+	 * @see com.rs.testcases.BaseTest
+	 * 
+	 * 
+	 *
+	 */ 
 
-	// private static WebDriver driver;
-
-	public static void initDriver(String browser) throws Exception {
+	public static void initDriver(String browser) {
 		// Setup the WebDriver
 
 		if (Objects.isNull(DriverManager.getDriver())) {
@@ -34,6 +55,10 @@ public final class Driver {
 
 	}
 
+	/**
+	 * 
+	 * quit driver is used to close the browser instance throughout the application
+	 */
 	public static void quitDriver() {
 		if (Objects.nonNull(DriverManager.getDriver())) {
 			DriverManager.getDriver().quit();

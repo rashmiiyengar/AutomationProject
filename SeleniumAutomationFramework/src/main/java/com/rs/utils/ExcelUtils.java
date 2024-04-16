@@ -12,6 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.rs.constants.FrameworkConstants;
+import com.rs.exceptions.FramworkException;
+import com.rs.exceptions.InvalidPathExcelException;
 
 public class ExcelUtils {
 
@@ -21,11 +23,11 @@ public class ExcelUtils {
 
 	static List<Map<String, String>> list;
 
-	public static List<Map<String, String>> getTestDetails(String sheetname) throws IOException, FileNotFoundException {
+	public static List<Map<String, String>> getTestDetails(String sheetname) {
 
-		FileInputStream fs = new FileInputStream(FrameworkConstants.getExcelPath());
 		
-		try (fs) {
+		
+		try (FileInputStream fs = new FileInputStream(FrameworkConstants.getExcelPath())) {
 
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
 			// String sheetname = "RUNMANAGER";
@@ -49,13 +51,12 @@ public class ExcelUtils {
 			}
 
 		}  catch(FileNotFoundException e) {
-			e.printStackTrace();
+			throw new InvalidPathExcelException("Excel file is not found");
 		}
 		catch(IOException e) {
-			e.printStackTrace();
+			throw new FramworkException("Some IO Exception happened while reading excel file");
 		}
 		
-
 		return list;
 
 	}

@@ -1,6 +1,5 @@
 package com.rs.listeners;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 import org.testng.ISuite;
@@ -12,33 +11,44 @@ import com.rs.annotations.FrameworkAnnotation;
 import com.rs.reports.ExtentLogger;
 import com.rs.reports.ExtentReport;
 
+/**
+ * Implements {@link org.testng.ITestListener} and {@link org.testng.ISuiteListener} to leverage
+ * the abstract methods Mostly used to help in extent report generation
+ * 
+ * <pre> Please make sure to add the listener details testng.xml file</pre>
+ * 
+	Apr 15, 2024
+	@author rashmisoundar
+ */
+
 public class ListenerClass implements ITestListener, ISuiteListener {
 
+	/**
+	 * Initialise the reports with the file name
+	 * @see com.rs.reports.ExtentReport
+	 */
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
-		try {
+		
 			ExtentReport.initReports();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
+	/**
+	 * Terminate the report
+	 * @see com.rs.reports.ExtentReport
+	 */
 	@Override
 	public void onFinish(ISuite suite) {
 		// TODO Auto-generated method stub
-		try {
 			ExtentReport.flushReports();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
+	/**
+	 * Starts a test node for each testng test
+	 * @see com.rs.reports.ExtentReport
+	 * @see com.rs.annotations.FramworkAnnotations
+	 */
 	@Override
 	public void onTestStart(ITestResult result) {
 
@@ -49,13 +59,22 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 				.getAnnotation(FrameworkAnnotation.class).category());
 
 	}
-
+	
+	/**
+	 * Marks the test as pass and logs in it report
+	 * @see com.rs.reports.FrameworkLogger
+	 */
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
 		ExtentLogger.pass(result.getMethod().getMethodName() + " is passed successfully");
 	}
-
+	
+	/**
+	 * Marks the test as fail, append base64 screenshot and logs in the report
+	 * @see com.rs.reports.FrameworkLogger
+	 * @see com.rs.utils.ScreenshotUtils
+	 */
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// ExtentLogger.fail(result.getMethod().getMethodName() + "is failed ");
@@ -69,7 +88,11 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Marks the test as skipped
+	 * @see com.rs.reports.FrameworkLogger
+	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
 
